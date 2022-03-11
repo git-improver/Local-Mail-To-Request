@@ -24,3 +24,6 @@ I am running the python script on a Raspberry Pi. Simply add the IP address of y
 
 ## Remarks
 My (Dahua) camera didn't properly work with sending mails. Therefore I had to use handle_QUIT. If your's works better, simply use handle_DATA and you will be able to read content of the mail and adapt your processing more detailed.
+
+## Thanks
+Thanks to MyDaHua of ipcamtalk for the idea! https://ipcamtalk.com/threads/send-http-request-if-alarm-dahua-ipc-hfw5442e-ze.62080/#post-647785
