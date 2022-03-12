@@ -8,7 +8,7 @@ IP-Cameras (e.g. Dahua, InStar, ...) often can send mails when an alarm is trigg
 A Mail can be useful to see it on your smartphone but there is always a lag of time due to a long delivery time. 
 Let's assume you want to switch on the light of your smart home based on the cameras alert - far to slow.
 
-With this script, you run a local mail server. The Ip Camera will send a mail immediately (lag of 0.01 s) and you can directly convert it to a html request.
+With this script you run a local mail server. The Ip Camera will send a mail immediately (lag of 0.01 s) and you can directly convert it to a html request.
 
 Modify the script as appropriate.
 
