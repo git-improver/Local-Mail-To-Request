@@ -28,3 +28,6 @@ I am running the python script on a Raspberry Pi. Simply add the IP address of y
 
 ## Thanks
 Thanks to MyDaHua of ipcamtalk for the idea! https://ipcamtalk.com/threads/send-http-request-if-alarm-dahua-ipc-hfw5442e-ze.62080/#post-647785
+
+
+<sub> test </sub>
