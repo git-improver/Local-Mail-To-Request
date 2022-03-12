@@ -58,7 +58,7 @@ class MyMessageHandler(AsyncMessage):
 
 async def amain(loop):
 
-    cont = MyController(MyMessageHandler(), hostname='', port=8023)
+    cont = MyController(MyMessageHandler(), hostname='', port=8025)
     cont.start()
 
 
