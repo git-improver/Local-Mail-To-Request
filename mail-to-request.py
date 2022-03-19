@@ -37,6 +37,7 @@ class MyController(Controller):
 class MyMessageHandler(AsyncMessage):
 
     async def handle_DATA(self, server, session, envelope):
+        return_message = '250 Message accepted for delivery'
         # Identify Camera that sent the request
         if session.peer[0] == IP_CAMERA_DRIVEWAY:
             url = BASE_URL + URL_DRIVEWAY
@@ -58,10 +59,15 @@ class MyMessageHandler(AsyncMessage):
             if "Alarm Name: " in each_line:
                 alarm_name = each_line.split("Alarm Name: ")[1]
 
+        if "end" in alarm_name:
+            # Do not react on end mails, only on start mails of alarm
+            return return_message
+
         # Handle based on alarm_name
         normal_alarm_states = ["IVS-TRIPWIRE-GATE",
                                "IVS-TRIPWIRE-MAIN-DOOR",
                                "IVS-TRIPWIRE-SIDE-DRIVEWAY",
+                               "IVS-INTRUSION-DRIVEWAY",
                                "IVS-TRIPWIRE-GARDEN",
                                "IVS-INTRUSION-GARDEN"]
         if alarm_name in normal_alarm_states:
@@ -74,7 +80,7 @@ class MyMessageHandler(AsyncMessage):
             # Send pushover message if alarm name is unknown
             send_pushover_message(title="Unknown camera alarm name", message=message_content)
 
-        return '250 Message accepted for delivery'
+        return return_message
 
 
     @staticmethod
@@ -123,6 +129,7 @@ def send_pushover_message(title:str = None,
     if message is not None:
         data["message"] = message
     if attachment is not None:
+        # files["attachment"] = ("image.jpg", open("/home/pi/photo/mailpic.jpg", "rb"), "image/jpeg")
         files["attachment"] = ("image.jpg", open(attachment, "rb"), "image/jpeg")
 
     r = requests.post("https://api.pushover.net/1/messages.json",
