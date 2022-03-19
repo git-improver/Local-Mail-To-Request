@@ -1,0 +1,8 @@
+TOKEN = "abcdef"
+BASE_URL = "https://192.168.100.20/api/values/"
+URL_DRIVEWAY = "aa1z"
+URL_GARDEN = "b2k4"
+IP_CAMERA_DRIVEWAY = '192.168.100.89'
+IP_CAMERA_GARDEN = '192.168.100.99'
+TOKEN_PUSHOVER = "abcdef"
+USER_KEY_PUSHOVER = "abcdef"
