@@ -134,7 +134,7 @@ def send_pushover_message(title:str = None,
 
 async def amain(loop):
 
-    cont = MyController(MyMessageHandler(), hostname='', port=8022)
+    cont = MyController(MyMessageHandler(), hostname='', port=8025)
     cont.start()
 
 
